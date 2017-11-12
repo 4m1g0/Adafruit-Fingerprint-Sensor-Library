@@ -64,6 +64,7 @@
 #define FINGERPRINT_STORE 0x06
 #define FINGERPRINT_LOAD 0x07
 #define FINGERPRINT_UPLOAD 0x08
+#define FINGERPRINT_DOWNLOAD 0x09
 #define FINGERPRINT_DELETE 0x0C
 #define FINGERPRINT_EMPTY 0x0D
 #define FINGERPRINT_SETPASSWORD 0x12
@@ -122,6 +123,7 @@ class Adafruit_Fingerprint {
 
   uint8_t emptyDatabase(void);
   uint8_t storeModel(uint16_t id);
+  uint8_t downloadModel(uint16_t id, uint8_t packet_1[], uint8_t packet_2[], uint8_t slot);
   uint8_t loadModel(uint16_t id);
   uint8_t getModel(void);
   uint8_t deleteModel(uint16_t id);
